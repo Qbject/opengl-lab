@@ -1,4 +1,5 @@
 import glfw
+from OpenGL.GL import *
 
 def main():
     if not glfw.init():
@@ -12,7 +13,11 @@ def main():
     glfw.make_context_current(window)
 
     while not glfw.window_should_close(window):
-        # logic here
+        glBegin(GL_TRIANGLES)
+        glVertex2f(0, 1)
+        glVertex2f(1, -1)
+        glVertex2f(-1, -1)
+        glEnd()
 
         glfw.swap_buffers(window)
         glfw.poll_events()
