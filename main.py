@@ -59,9 +59,10 @@ def main():
     shader = createShader(vertex, fragment)
     glUseProgram(shader)
 
-    glUniform4f(glGetUniformLocation(shader, "theColor"), 0.2, 0.4, 0.7, 0.9)
+    glUniform2f(glGetUniformLocation(shader, "resolution"), 640, 480)
 
     while not glfw.window_should_close(window):
+        glUniform1f(glGetUniformLocation(shader, "time"), glfw.get_time())
         glDrawArrays(GL_TRIANGLES, 0, 6)
 
         glfw.swap_buffers(window)
