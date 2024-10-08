@@ -54,7 +54,7 @@ def main():
     glEnableVertexAttribArray(0)
 
     vertex = open("vertex.shader").read()
-    fragment = open("fragment.shader").read()
+    fragment = open("siri.shader").read()
 
     shader = createShader(vertex, fragment)
     glUseProgram(shader)

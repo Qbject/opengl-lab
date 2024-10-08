@@ -1,16 +1,10 @@
+// https://www.shadertoy.com/view/tsXBzS
+
 out vec4 color;
 
 uniform vec2 resolution;
 uniform float time;
 vec2 fragCoord = gl_FragCoord.xy;
-
-// void main(){
-//     vec2 uv = fragCoord / resolution.xy;
-
-//     vec3 col = 0.5 + 0.5 * cos(time + uv.xyx + vec3(0, 2, 4));
-
-//     color = vec4(col, 1.0);
-// }
 
 vec3 palette(float d){
 	return mix(vec3(0.2,0.7,0.9),vec3(1.,0.,1.),d);
